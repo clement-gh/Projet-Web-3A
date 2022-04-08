@@ -1,0 +1,51 @@
+.tab {
+    display: flex;
+  }
+  
+  .terre {
+    background: url("../img/terre.png");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .rocher {
+    background: url("../img/rocher.png");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .diamant {
+    background: url("../img/diamant.png");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .mur {
+    background: url("../img/mur.png");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .vide {
+    background: url("../img/vide.png");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .player {
+    background: url("../img/joueur.png");
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+  }
+  
+  #grille {
+    color: rgb(94,94,94);
+    align-self: center;
+    
+  }

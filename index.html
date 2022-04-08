@@ -5,20 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOULDER DASH</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div id="menu">
         <button id="nouvellepartie">Nouvelle partie</button>
         <button>Reprendre la partie </button>
         <button>Charger un niveau</button>
+
+
+        
       </div>
-      <script src="./js/map.js"></script>
+      <input type="file" onchange="loadFile(this.files[0])">
+    
+    <div id="output"></div>
+    <script>
+      async function loadFile(file) {
+        let text = await file.text();
+        document.getElementById('output').textContent = text;
+      }
+    </script>
+
+    
 
 
 
       
       <div id="game" hidden>  
+
+        <button id="accueil">accueil</button>
+        <button id="recommencer" onclick="window.location.href='./index.html'">recommencer</button>
+        <div id="grille">
       </div>
+     
+          <div>
+            <script src="./js/map.js"></script>
+            <script src="./js/jeux.js"></script>
+          </div>
       
 </body>
 </html>

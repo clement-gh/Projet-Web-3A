@@ -3,7 +3,7 @@ let y=0;
 let nbrDeplacement =0;
 
 
-document.addEventListener("Touche", function(event){
+document.addEventListener("keydown", function(event){
         switch (event.code)
         {
           

@@ -1,5 +1,5 @@
 
-let test= "test";
+let fichier= "";
 let response = "";
 
 const tab = [];
@@ -11,11 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadFichier() {
 
-    fetch('../test.txt')
-    .then(response => response.text())
-    .then(text => console.log(text))
+    
+    fetch("./test.txt").then((res) => res.text()).then((text) => {
+      fichier = text;
 
-   
+      loadmap();
+  });
 }
 
 
@@ -24,32 +25,32 @@ function loadmap() {
   const grille = document.getElementById("grille");
   grille.innerHTML = '';
   for (let ligne of fichier.split(/\n/)) {
-    const map = [];
+    const tab2 = [];
     for (let i = 0; i < ligne.length; i++) {
       if (ligne[i] === "M") {
-        map.push("M");
+        tab2.push("M");
       }
       if (ligne[i] === "T") {
-        map.push("T");
+        tab2.push("T");
       }
       if (ligne[i] === "R") {
-        map.push("R");
+        tab2.push("R");
       }
       if (ligne[i] === "D") {
-        map.push("D");
+        tab2.push("D");
       }
       if (ligne[i] === "V") {
-        map.push("V");
+        tab2.push("V");
       }
       if (ligne[i] === "P") {
-        map.push("P");
+        tab2.push("P");
       }
       else if (ligne[i] === "0") {
       }
     }
-    tab.push(map);
+    tab.push(tab2);
   }
-  console.log(tab);
+  
   printMap();
 }
 
