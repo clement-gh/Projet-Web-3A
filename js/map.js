@@ -1,6 +1,6 @@
 
 let test= "test";
-
+let response = "";
 
 const tab = [];
 
@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadFichier() {
 
+    fetch('../test.txt')
+    .then(response => response.text())
+    .then(text => console.log(text))
 
-    
-    console.log('fichier chragé')
+   
 }
 
 
@@ -22,30 +24,30 @@ function loadmap() {
   const grille = document.getElementById("grille");
   grille.innerHTML = '';
   for (let ligne of fichier.split(/\n/)) {
-    const tab1 = [];
+    const map = [];
     for (let i = 0; i < ligne.length; i++) {
       if (ligne[i] === "M") {
-        tab1.push("M");
+        map.push("M");
       }
       if (ligne[i] === "T") {
-        tab1.push("T");
+        map.push("T");
       }
       if (ligne[i] === "R") {
-        tab1.push("R");
+        map.push("R");
       }
       if (ligne[i] === "D") {
-        tab1.push("D");
+        map.push("D");
       }
       if (ligne[i] === "V") {
-        tab1.push("V");
+        map.push("V");
       }
       if (ligne[i] === "P") {
-        tab1.push("P");
+        map.push("P");
       }
       else if (ligne[i] === "0") {
       }
     }
-    tab.push(tab1);
+    tab.push(map);
   }
   console.log(tab);
   printMap();
