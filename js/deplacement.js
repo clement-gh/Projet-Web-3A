@@ -184,6 +184,8 @@ document.addEventListener("keydown", function(event){
         x=getX(); y=getY();
     }
     
+console.log(niveau)
+
    if(mort==true){
     setTimeout(function(){
         niv();
@@ -191,7 +193,6 @@ document.addEventListener("keydown", function(event){
        
     }
 
-        console.log(x)
-        console.log(y)
+       
 
 });

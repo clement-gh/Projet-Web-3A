@@ -22,7 +22,7 @@ switch(niveau){
     nom="./niveau1.txt";break;
   case 1:
      nom="./niveau2.txt";break;
-  case 3:
+  case 2:
     nom="./niveau3.txt";break;
 
 
