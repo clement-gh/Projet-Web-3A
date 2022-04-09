@@ -1,13 +1,15 @@
-let x=0;
-let y=0;
+let x=2;
+let y=5;
 let nbrDeplacement =0;
 
+console.log(getPosition());
 
 document.addEventListener("keydown", function(event){
-        switch (event.code)
+    console.log(getPosition());
+        switch (event.key)
         {
           
-            case 'Q' :
+            case 'z' :
                 if (document.querySelector("#grille").children[x-1].children[y].classList.contains('rocher')===false){
                     if (document.querySelector("#grille").children[x-1].children[y].classList.contains('mur')===false){
                 document.querySelector("#grille").children[x-1].children[y].className="player";
@@ -19,7 +21,7 @@ document.addEventListener("keydown", function(event){
                 break;
             
             
-            case 'Z' :
+            case 'q' :
                 if (document.querySelector("#grille").children[x].children[y-1].classList.contains('rocher')===false){
                     if (document.querySelector("#grille").children[x].children[y-1].classList.contains('mur')===false){
                     document.querySelector("#grille").children[x].children[y-1].className="player";
@@ -40,7 +42,7 @@ document.addEventListener("keydown", function(event){
                 break;
                 
            
-            case 'D' : 
+            case 's' : 
             if (document.querySelector("#grille").children[x+1].children[y].classList.contains("rocher")===false){
                 if (document.querySelector("#grille").children[x+1].children[y].classList.contains("mur")===false){
             document.querySelector("#grille").children[x+1].children[y].className="player";
@@ -61,7 +63,7 @@ document.addEventListener("keydown", function(event){
                 break;
                     
            
-            case 'S' :
+            case 'd' :
                 if (document.querySelector("#grille").children[x].children[y+1].classList.contains('rocher')===false){
                     if (document.querySelector("#grille").children[x].children[y+1].classList.contains('mur')===false){
                 document.querySelector("#grille").children[x].children[y+1].className="player";

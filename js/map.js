@@ -23,7 +23,7 @@ function loadFichier() {
 
 function loadmap() {
   const grille = document.getElementById("grille");
-  grille.innerHTML = '';
+  //grille.innerHTML = '';
   for (let ligne of fichier.split(/\n/)) {
     const tab2 = [];
     for (let i = 0; i < ligne.length; i++) {
@@ -52,6 +52,7 @@ function loadmap() {
   }
   
   printMap();
+  console.log(tab)
 }
 
 
@@ -86,83 +87,25 @@ function printMap() {
     }
     map += '</div>';
     grille.innerHTML += map;
+
   } 
+  getPosition();
+  
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/** 
-
-
-let nbrDiamantCollecté =0;
-let compteur =0;
-
-compteur=0;
-    for (let i = 0; i < 32; ++i) {
-        for (let j = 0; j < 16; ++j) {
-            if(document.querySelector("#grille").children[j].children[i].classList.contains('rocher')===true){
-                if(document.querySelector("#grille").children[j+1].children[i].classList.contains('vide')===true) {
-                    document.querySelector("#grille").children[j+1].children[i].className='rocher';
-                    document.querySelector("#grille").children[j].children[i].className='vide';
-                }
-            }
-            if(document.querySelector("#grille").children[j].children[i].classList.contains('diamant')===true){
-                compteur+=1;
-            }
-        }
+function getPosition(){
+let pos =[]
+  for (let i = 0; i < tab.length; ++i) {
+    for (let j = 0; j < tab[i].length; ++j) {
+      if (tab[i][j] == "P"){
+      pos.push(i);
+      pos.push(j);
+      }
+      
     }
-    nbrDiamantCollecté=nbrDiamant-compteur;
-    console.log('nombre de diamant présents = ' + nbrDiamant + ' | nombre de diamant collectés = ' + nbrDiamantCollecté );
-    if (nbrDiamant===nbrDiamantCollecté){
-        console.log('VICTOIRE');
-    } */
+  }
+  
+console.log(pos)
+  return pos;
+}
