@@ -3,6 +3,8 @@
 document.getElementById("nouvellepartie")
         .addEventListener("click", function() {
           niv();
+          deletesave();
+          tab=[];
   document.getElementById("menu").hidden = true;
   document.getElementById("game").hidden = false;
    

@@ -178,6 +178,7 @@ document.addEventListener("keydown", function(event){
             //afficher un msg de victoire
             setTimeout(function(){
                 niv();  
+                tab=[];
             },50);
         }else {}//afficher victoire des 3lvl
      

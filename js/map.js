@@ -7,7 +7,7 @@ let tab = [];
 let niveau =0;
 let saved=0;
 
-let nom = "./test.txt";
+let nom = "./niveau.txt";
 /** 
 document.addEventListener("DOMContentLoaded", () => {
   niv();
