@@ -130,5 +130,32 @@ document.addEventListener("keydown", function(event){
         }
 
     
+        //gravité auto
+        //parcours de la grille
+
+        for ( x = 0; x < 32; ++x) {
+            for ( y = 0; y < 16; ++y) {
+
+                //verification si un rocher est au dessu du vide
+                if(document.querySelector("#grille").children[y].children[x].classList.contains("rocher")===true){
+                    if(document.querySelector("#grille").children[y+1].children[x].classList.contains("vide")===true) {
+                        //actualisation de la grille
+                        tab[y+1][x]='R'
+                        tab[y][x]='V'
+                        document.querySelector("#grille").children[y+1].children[x].className="rocher";
+                        document.querySelector("#grille").children[y].children[x].className="vide";
+                        //actualisation tu tableau
+
+                       
+                    }
+                }
+                
+                
+            }
+            
+        }
+        x=getX(); y=getY();
+        console.log(x)
+        console.log(y)
 
 });
