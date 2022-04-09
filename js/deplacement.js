@@ -165,7 +165,11 @@ document.addEventListener("keydown", function(event){
         }
        
         x=getX(); y=getY();}
-        else{x=0;y=0}
+        else{
+            setTimeout(function(){
+                loadFichier();  
+            },500);
+        }
 
         console.log(x)
         console.log(y)

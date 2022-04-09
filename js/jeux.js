@@ -16,3 +16,8 @@ document.getElementById("accueil")
            
           }
 }, false);
+
+document.getElementById("recommencer") .addEventListener("click", function() {
+loadFichier();
+
+}, false);

@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadFichier() {
-
+  tab = [];
     
     fetch("./test.txt").then((res) => res.text()).then((text) => {
       fichier = text;
-
+      
       loadmap();
   });
 }
