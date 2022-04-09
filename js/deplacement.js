@@ -1,9 +1,9 @@
 
 let mort = false;
-
+let collectionDeDiamant=0;
 
 document.addEventListener("keydown", function(event){
-    //console.log(getPosition());
+    if(mort == false){
       console.log(tab)
         switch (event.key)
         {
@@ -138,10 +138,10 @@ document.addEventListener("keydown", function(event){
                 break;
         }
 
-        if(mort == false){
+        
         //gravité auto
         //parcours de la grille
-
+        cpt=0;
         for ( x = 0; x < 32; ++x) {
             for ( y = 0; y < 16; ++y) {
 
@@ -159,13 +159,24 @@ document.addEventListener("keydown", function(event){
                     }
                 }
                 
+                if(document.querySelector("#grille").children[y].children[x].classList.contains("diamant")===true){
+                    compteur+=1;
+                }
+                
                 
             }
-            
+
+
+                
         }
+            
+        collectionDeDiamant=nbrDiamant-cpt;
+
        
-        x=getX(); y=getY();}
-        else{
+        x=getX(); y=getY();
+    }
+    
+    else{
             setTimeout(function(){
                 loadFichier();  
             },500);

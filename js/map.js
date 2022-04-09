@@ -2,6 +2,7 @@
 let fichier= "";
 let response = "";
 let nbrDeplacement =0;
+let nbrDiamant =0;
 let tab = [];
 let tab2 = [];
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,6 +39,7 @@ function loadmap() {
       }
       if (ligne[i] === "D") {
         tab2.push("D");
+        nbrDiamant+=1;
       }
       if (ligne[i] === "V") {
         tab2.push("V");
