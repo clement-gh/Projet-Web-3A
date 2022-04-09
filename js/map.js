@@ -5,14 +5,15 @@ let nbrDeplacement =0;
 let nbrDiamant =0;
 let tab = [];
 let niveau =0;
+let saved=0;
 
 let nom = "./test.txt";
-
+/** 
 document.addEventListener("DOMContentLoaded", () => {
   niv();
 
 });
-
+*/
 function niv(){
 switch(niveau){
   case 0:
@@ -31,7 +32,7 @@ loadFichier(nom)
 }
 
 function loadFichier(nom) {
-  tab = [];
+  
     
     fetch(nom).then((res) => res.text()).then((text) => {
       fichier = text;
@@ -149,4 +150,59 @@ function getY(){
     return pos;
   }
 
+  function getTab(){
+    return tab;
+  }
+  function getNbreDeplacement(){
+    return nbrDeplacement;
+  }
+  function getNbreDiamant(){
+    return nbrDiamant;
+  }
+/** 
+  function setTab(tableau){
+    tab = tableau;
+  }
+  function setNbreDeplacement(nbre){
+    nbrDeplacement = nbre;
+  }
+  function setNbreDiamant(nbre){
+    nbrDiamant = nbre;
+  }
+*/
+
+  function save(){
+    
+   
+    window.localStorage.setItem("tableau", JSON.stringify(getTab()));
+    window.localStorage.setItem("diams", JSON.stringify(getNbreDiamant()));
+    window.localStorage.setItem("deplacement", JSON.stringify(getNbreDeplacement));
+    saved=1;
+    
+    }
+
+    function loadSavedGame() {
+     
+        let tabTemp =[];
+
+         tabTemp=window.localStorage.getItem("tableau");
+         t=0;
+         for (let x = 0; x < 16; ++x) {
+          for (let y = 0; y < 32; ++y) {
+            tab[x][y]=tabTemp[t]
+            ++t;
+          }
+        }
+       nbrDeplacement=localStorage.getItem("deplacement");
+       nbrDiamant=localStorage.getItem("diams");
+         
+      
+      
+  }
+
+  function deletesave(){
+
+    saved=0;
   
+  
+  }
