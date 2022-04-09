@@ -5,40 +5,53 @@
  
     min-height: 800px;
     background-color: rgba(22, 19, 19, 0.89);
-    display: flex;
-    flex-direction: column;
     text-align: center;
    
    
 }
-#container{
-  text-align: center;
+img{
+  display: block;
+  margin: 0 auto;
 }
-button{
-  display: flex;
-  flex-direction: column;
+#menu button {
+  margin-top: 20px;
   background-color: rgb(137, 71, 223);  
   width: 40%;
   height: 50px;
   margin: 50px;
-  font-size: 24px;
+  font-size: 26px;
   border: solid rgb(255, 255, 255);
   padding: 0;
-  border-radius: 5px ;
+  border-radius: 8px ;
   box-sizing: border-box;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  text-align: center;
+}
+
+#game button{
+
+  background-color: rgb(137, 71, 223);  
+  width: 11%;
+  height: 25px;
+  margin: 25px;
+  font-size: 12px;
+  border: solid rgb(255, 255, 255);
+  padding: 0;
+  border-radius: 2px ;
+  box-sizing: border-box;
+  text-align: center;
+}
+#menu button:hover {
+  border: solid rgb(137, 71, 223);  
+  background-color: rgb(255, 255, 255);
+
 
 }
-button:hover {
+
+#game button:hover {
   border: solid rgb(137, 71, 223);  
-  width: 40%;
-  height: 50px;
-  margin: 50px;
-  font-size: 24px;
   background-color: rgb(255, 255, 255);
-  padding: 0;
-  border-radius: 5px ;
-  box-sizing: border-box;
+
 
 }
   
