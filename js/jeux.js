@@ -18,6 +18,7 @@ document.getElementById("accueil")
 }, false);
 
 document.getElementById("recommencer") .addEventListener("click", function() {
-loadFichier();
-
+  if (confirm("Voulez-vous vraiment recommencer la partie ?")) {
+loadFichier(nom);
+  }
 }, false);
