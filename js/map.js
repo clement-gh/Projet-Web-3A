@@ -4,16 +4,36 @@ let response = "";
 let nbrDeplacement =0;
 let nbrDiamant =0;
 let tab = [];
-let tab2 = [];
+let niveau =0;
+
+let nom = "./test.txt";
+
 document.addEventListener("DOMContentLoaded", () => {
-  loadFichier();
+  niv();
 
 });
 
-function loadFichier() {
+function niv(){
+switch(niveau){
+  case 0:
+    nom="./test.txt";break;
+  case 1:
+     nom="./niveau2.txt";break;
+  case 3:
+    nom="./niveau3.txt";break;
+
+
+
+
+
+}
+loadFichier(nom)
+}
+
+function loadFichier(nom) {
   tab = [];
     
-    fetch("./test.txt").then((res) => res.text()).then((text) => {
+    fetch(nom).then((res) => res.text()).then((text) => {
       fichier = text;
       
       loadmap();
@@ -26,7 +46,7 @@ function loadmap() {
   const grille = document.getElementById("grille");
   //grille.innerHTML = '';
   for (let ligne of fichier.split(/\n/)) {
-     tab2 = [];
+    const tab2 = [];
     for (let i = 0; i < ligne.length; i++) {
       if (ligne[i] === "M") {
         tab2.push("M");

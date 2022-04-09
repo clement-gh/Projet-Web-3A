@@ -10,6 +10,8 @@ document.getElementById("nouvellepartie")
 document.getElementById("accueil")
         .addEventListener("click", function() {
           if (confirm("Voulez-vous vraiment quitter la partie ?")) {
+            if (confirm("Voulez-vous sauvegarder la progression ? (ok pour sauvegarder)")) {
+            }
             document.getElementById("menu").hidden = false;
             document.getElementById("game").hidden = true;
             

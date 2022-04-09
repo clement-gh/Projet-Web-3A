@@ -160,17 +160,28 @@ document.addEventListener("keydown", function(event){
                 }
                 
                 if(document.querySelector("#grille").children[y].children[x].classList.contains("diamant")===true){
-                    compteur+=1;
+                    cpt+=1;
                 }
                 
                 
             }
-
-
+            
                 
         }
             
         collectionDeDiamant=nbrDiamant-cpt;
+        if (nbrDiamant===collectionDeDiamant){
+            niveau +=1;
+            if(niveau!=4){
+
+            //passage au niveau suivant
+            //afficher un msg de victoire
+            setTimeout(function(){
+                niv();  
+            },50);
+        }else {}//afficher victoire des 3lvl
+     
+         }
 
        
         x=getX(); y=getY();
@@ -178,7 +189,7 @@ document.addEventListener("keydown", function(event){
     
     else{
             setTimeout(function(){
-                loadFichier();  
+                loadFichier(nom);  
             },500);
         }
 
