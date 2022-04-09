@@ -113,8 +113,8 @@ let pos =0
 }
 function getY(){
   let pos=0
-    for (let x = 0; x < tab.length; ++x) {
-      for (let y = 0; y < tab[x].length; ++y) {
+  for (let x = 0; x < tab.length; ++x) {
+    for (let y = 0; y < tab[x].length; ++y) {
         if (tab[x][y] === "P"){
        
         pos=y

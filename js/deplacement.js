@@ -1,5 +1,5 @@
 
-
+let mort = false;
 
 
 document.addEventListener("keydown", function(event){
@@ -69,10 +69,19 @@ document.addEventListener("keydown", function(event){
                 if (document.querySelector("#grille").children[x-1].children[y].classList.contains("rocher")===true){
                     if(document.querySelector("#grille").children[x+1].children[y].classList.contains("rocher")===false){
                         if(document.querySelector("#grille").children[x+1].children[y].classList.contains("mur")===false){
-                            document.querySelector("#grille").children[x].children[y].className="rocher";
-                            document.querySelector("#grille").children[x-1].children[y].className="vide";
-                            x=0;
-                            y=0;
+
+                            document.querySelector("#grille").children[x+1].children[y].className="joueur";
+                            document.querySelector("#grille").children[x].children[y].className="vide";
+                            x+=1;
+                            document.querySelector("#grille").children[x-1].children[y].className="rocher";
+                            document.querySelector("#grille").children[x-2].children[y].className="vide";
+                            
+                           document.querySelector("#grille").children[x].children[y].className="rocher";
+                           document.querySelector("#grille").children[x-1].children[y].className="vide";
+                            //document.querySelector("#grille").children[x-2].children[y].className="vide";
+
+                            
+                            
                             //fonction mort
                             mort=true;
                         }
@@ -80,7 +89,7 @@ document.addEventListener("keydown", function(event){
                 }
 
                   //autorise le déplacement si il n'y a pas de mur ou de rocher en bas
-                if (document.querySelector("#grille").children[x+1].children[y].classList.contains('rocher')===false){
+                else if (document.querySelector("#grille").children[x+1].children[y].classList.contains('rocher')===false){
                     if (document.querySelector("#grille").children[x+1].children[y].classList.contains('mur')===false){
 
                         //Déplace le joueur d'une case vers le bas et ajoute du vide là ou etait le joueur
@@ -129,7 +138,7 @@ document.addEventListener("keydown", function(event){
                 break;
         }
 
-    
+        if(mort == false){
         //gravité auto
         //parcours de la grille
 
@@ -154,7 +163,10 @@ document.addEventListener("keydown", function(event){
             }
             
         }
-        x=getX(); y=getY();
+       
+        x=getX(); y=getY();}
+        else{x=0;y=0}
+
         console.log(x)
         console.log(y)
 
