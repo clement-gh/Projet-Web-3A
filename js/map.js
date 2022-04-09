@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function niv(){
 switch(niveau){
   case 0:
-    nom="./test.txt";break;
+    nom="./niveau1.txt";break;
   case 1:
      nom="./niveau2.txt";break;
   case 3:
@@ -159,17 +159,8 @@ function getY(){
   function getNbreDiamant(){
     return nbrDiamant;
   }
-/** 
-  function setTab(tableau){
-    tab = tableau;
-  }
-  function setNbreDeplacement(nbre){
-    nbrDeplacement = nbre;
-  }
-  function setNbreDiamant(nbre){
-    nbrDiamant = nbre;
-  }
-*/
+
+
 
   function save(){
     

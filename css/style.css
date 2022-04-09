@@ -1,30 +1,70 @@
 .tab {
     display: flex;
   }
+  body {
+ 
+    min-height: 800px;
+    background-color: rgba(22, 19, 19, 0.89);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+   
+   
+}
+#container{
+  text-align: center;
+}
+button{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(137, 71, 223);  
+  width: 40%;
+  height: 50px;
+  margin: 50px;
+  font-size: 24px;
+  border: solid rgb(255, 255, 255);
+  padding: 0;
+  border-radius: 5px ;
+  box-sizing: border-box;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+button:hover {
+  border: solid rgb(137, 71, 223);  
+  width: 40%;
+  height: 50px;
+  margin: 50px;
+  font-size: 24px;
+  background-color: rgb(255, 255, 255);
+  padding: 0;
+  border-radius: 5px ;
+  box-sizing: border-box;
+
+}
   
   .terre {
-    background: url("../img/terre.png");
+    background: url("../img/terre-reel.png");
     background-size: contain;
     width: 24px;
     height: 24px;
   }
   
   .rocher {
-    background: url("../img/rocher.png");
+    background: url("../img/rocher-reel.png");
     background-size: contain;
     width: 24px;
     height: 24px;
   }
   
   .diamant {
-    background: url("../img/diamant.png");
+    background: url("../img/diamant-reel.png");
     background-size: contain;
     width: 24px;
     height: 24px;
   }
   
   .mur {
-    background: url("../img/mur.png");
+    background: url("../img/Brick_Block.png");
     background-size: contain;
     width: 24px;
     height: 24px;
@@ -38,7 +78,7 @@
   }
   
   .joueur {
-    background: url("../img/joueur.png");
+    background: url("../img/joueur-reel.png");
     background-size: contain;
     width: 24px;
     height: 24px;
