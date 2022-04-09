@@ -22,42 +22,38 @@
       
 
         
-     
+    
 
     
-    <div id="load" hidden>  
-        <input type="file" onchange="loadFile(this.files[0])">
-    <script>
-        
-      async function loadFile(file) {
-        let text = await file.text();
-        document.getElementById('load').textContent = text;
-      }
-    </script>
+    <div id="load" hidden> 
+      <input type="file"  id="file" />
 
-
+      <button id="play">jouer sur le niveau selectionné</button>
+     
+      <button id="retour">retour</button>
     </div>
 
- </div>
+   
 
 
       
       <div id="game" hidden>  
-
+        <div id="inputtext"></div>
         <button id="accueil">accueil</button>
        
         <button id="recommencer">recommencer</button>
-        <div id="grille">
+        <div id="grille"></div>
       </div>
      
-          
+      <div>
+        <script src="./js/jeux.js"></script>
+        <script src="./js/map.js"></script>
+        
+        <script src="./js/deplacement.js"></script>
+      </div>    
       
- <div>
-  <script src="./js/jeux.js"></script>
-  <script src="./js/map.js"></script>
-  
-  <script src="./js/deplacement.js"></script>
-</div>
+
+
 
 </body>
 </html>

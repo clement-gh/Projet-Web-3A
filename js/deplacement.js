@@ -169,11 +169,12 @@ document.addEventListener("keydown", function(event){
         }
             
         collectionDeDiamant=nbrDiamant-cpt;
+        inputText.innerHTML = collectionDeDiamant;
         if (nbrDiamant===collectionDeDiamant){
             ++niveau ;
-            
+            collectionDeDiamant=0;
             tab=[];
-        
+            cpt=0;
             //passage au niveau suivant
             //afficher un msg de victoire
             niv();

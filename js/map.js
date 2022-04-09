@@ -8,14 +8,10 @@ let niveau =0;
 let saved=0;
 let mort = false;
 let collectionDeDiamant=0;
-
+let inputText = document.getElementById("inputtext");
 let nom = "./niveau1.txt";
-/** 
-document.addEventListener("DOMContentLoaded", () => {
-  niv();
 
-});
-*/
+
 function niv(){
 switch(niveau){
   case 0:
@@ -30,8 +26,13 @@ switch(niveau){
 
 
 }
+collectionDeDiamant=0;
 mort = false;
 loadFichier(nom)
+tab=[]
+nbrDeplacement =0;
+inputText.innerHTML =0;
+nbrDiamant =0;
 }
 
 function loadFichier(nom) {
@@ -48,7 +49,7 @@ function loadFichier(nom) {
 
 function loadmap() {
   const grille = document.getElementById("grille");
-  //grille.innerHTML = '';
+  grille.innerHTML = '';
   for (let ligne of fichier.split(/\n/)) {
     const tab2 = [];
     for (let i = 0; i < ligne.length; i++) {
@@ -200,3 +201,27 @@ function getY(){
   
   
   }
+
+ function loadFile() {
+  let file=  document.getElementById("file").files[0];
+    
+  let reader =new FileReader();
+
+  reader.readAsText(file);
+  let txt =[];
+
+  setTimeout( () => {txt.push(file)}, 500);
+
+  txt.push(reader)
+  console.log(file)
+  console.log(reader)
+  console.log(reader.result)
+  console.log(txt)
+      
+         
+         
+      
+    
+  }
+
+      
