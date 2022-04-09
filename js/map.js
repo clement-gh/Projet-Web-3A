@@ -1,9 +1,9 @@
 
 let fichier= "";
 let response = "";
-
-const tab = [];
-
+let nbrDeplacement =0;
+let tab = [];
+let tab2 = [];
 document.addEventListener("DOMContentLoaded", () => {
   loadFichier();
 
@@ -25,7 +25,7 @@ function loadmap() {
   const grille = document.getElementById("grille");
   //grille.innerHTML = '';
   for (let ligne of fichier.split(/\n/)) {
-    const tab2 = [];
+     tab2 = [];
     for (let i = 0; i < ligne.length; i++) {
       if (ligne[i] === "M") {
         tab2.push("M");
@@ -53,6 +53,7 @@ function loadmap() {
   
   printMap();
   console.log(tab)
+  x=getX(); y=getY();
 }
 
 
@@ -79,7 +80,7 @@ function printMap() {
         map += '<div class="vide"></div>';
       }
       if (tab[i][j] === "P") {
-        map += '<div class="player"></div>';
+        map += '<div class="joueur"></div>';
       }
       else if (tab[i] === "0") {
         map += '<div class="autre"></div>';
@@ -89,23 +90,41 @@ function printMap() {
     grille.innerHTML += map;
 
   } 
-  getPosition();
+
+ 
   
 }
 
 
-function getPosition(){
-let pos =[]
-  for (let i = 0; i < tab.length; ++i) {
-    for (let j = 0; j < tab[i].length; ++j) {
-      if (tab[i][j] == "P"){
-      pos.push(i);
-      pos.push(j);
-      }
+function getX(){
+let pos =0
+  for (let x = 0; x < tab.length; ++x) {
+    for (let y = 0; y < tab[x].length; ++y) {
+      if (tab[x][y] ==="P"){
+      pos=x
       
+      }
     }
+     
   }
   
-console.log(pos)
+
   return pos;
 }
+function getY(){
+  let pos=0
+    for (let x = 0; x < tab.length; ++x) {
+      for (let y = 0; y < tab[x].length; ++y) {
+        if (tab[x][y] === "P"){
+       
+        pos=y
+        }
+        
+      }
+    }
+    
+  
+    return pos;
+  }
+
+  

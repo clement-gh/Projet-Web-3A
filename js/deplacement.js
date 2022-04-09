@@ -1,41 +1,62 @@
-let x=2;
-let y=5;
-let nbrDeplacement =0;
 
-console.log(getPosition());
+
+
 
 document.addEventListener("keydown", function(event){
-    console.log(getPosition());
+    //console.log(getPosition());
+      console.log(tab)
         switch (event.key)
         {
           
             case 'z' :
-                if (document.querySelector("#grille").children[x-1].children[y].classList.contains('rocher')===false){
+            case "ArrowUp":
+                 //autorise le déplacement si il n'y a pas de mur ou de rocher en haut
+                if (document.querySelector("#grille").children[x-1].children[y].classList.contains('rocher' )===false){
                     if (document.querySelector("#grille").children[x-1].children[y].classList.contains('mur')===false){
-                document.querySelector("#grille").children[x-1].children[y].className="player";
-                document.querySelector("#grille").children[x].children[y].className="vide";
-                x-=1;
-                nbrDeplacement+=1;
+                
+                     //Déplace le joueur d'une case vers le haut et ajoute du vide là ou etait le joueur
+                        document.querySelector("#grille").children[x-1].children[y].className="joueur";
+                        document.querySelector("#grille").children[x].children[y].className="vide";
+                         //actualisation du tableau 
+                         tab[x-1][y]='P'
+                         tab[x][y]='V'
+                         x-=1;
+                         nbrDeplacement+=1;
                     }
-                }
+               }
                 break;
             
             
             case 'q' :
-                if (document.querySelector("#grille").children[x].children[y-1].classList.contains('rocher')===false){
-                    if (document.querySelector("#grille").children[x].children[y-1].classList.contains('mur')===false){
-                    document.querySelector("#grille").children[x].children[y-1].className="player";
-                    document.querySelector("#grille").children[x].children[y].className="vide";
-                    y-=1;
-                    nbrDeplacement+=1;
+            case "ArrowLeft":    
+            //autorise le déplacement si il n'y a pas de mur ou de rocher à gauche
+                if (document.querySelector("#grille").children[x].children[y-1].classList.contains("rocher")===false){
+                    if (document.querySelector("#grille").children[x].children[y-1].classList.contains("mur")===false){
+
+                        //Déplace le joueur d'une case vers la gauche et ajoute du vide là ou etait le joueur
+                         document.querySelector("#grille").children[x].children[y-1].className="joueur";
+                         document.querySelector("#grille").children[x].children[y].className="vide";
+
+                        //actualisation du tableau 
+                        tab[x][y-1]='P'
+                        tab[x][y]='V'
+                        y-=1;
+                        nbrDeplacement+=1;
                     }
                 }
+                //verification pour pousser un rocher
                 else if (document.querySelector("#grille").children[x].children[y-1].classList.contains('rocher')===true){
                     if(document.querySelector("#grille").children[x].children[y-2].classList.contains('vide')===true){
+
+                        //actualisation de la grille et du tableau
                         document.querySelector("#grille").children[x].children[y-2].className="rocher";
-                        document.querySelector("#grille").children[x].children[y-1].className="player";
+                        tab[x][y-2]='R' 
+                        document.querySelector("#grille").children[x].children[y-1].className="joueur";
+                        tab[x][y-1]='P'
                         document.querySelector("#grille").children[x].children[y].className="vide";
+                        tab[x][y]='V'
                         y-=1;
+
                         nbrDeplacement+=1;
                     }
                 }
@@ -43,40 +64,61 @@ document.addEventListener("keydown", function(event){
                 
            
             case 's' : 
-            if (document.querySelector("#grille").children[x+1].children[y].classList.contains("rocher")===false){
-                if (document.querySelector("#grille").children[x+1].children[y].classList.contains("mur")===false){
-            document.querySelector("#grille").children[x+1].children[y].className="player";
-            document.querySelector("#grille").children[x].children[y].className="vide";
-            x+=1;
-            nbrDeplacement+=1;
+            case "ArrowDown":
+                //permet de verifier si un rocher se trouve au dessus et si l'on vas  en bas le rocher tombe et on meurt
+                if (document.querySelector("#grille").children[x-1].children[y].classList.contains("rocher")===true){
+                    if(document.querySelector("#grille").children[x+1].children[y].classList.contains("rocher")===false){
+                        if(document.querySelector("#grille").children[x+1].children[y].classList.contains("mur")===false){
+                            document.querySelector("#grille").children[x].children[y].className="rocher";
+                            document.querySelector("#grille").children[x-1].children[y].className="vide";
+                            x=0;
+                            y=0;
+                            //fonction mort
+                            mort=true;
+                        }
+                    }
                 }
-            }
-            if (document.querySelector("#grille").children[x-1].children[y].classList.contains('rocher')===true){
-                if(document.querySelector("#grille").children[x+1].children[y].classList.contains('rocher')===false){
-                    document.querySelector("#grille").children[x].children[y].className='rocher';
-                    document.querySelector("#grille").children[x-1].children[y].className='vide';
-                    x=0;
-                    y=0;
-                    console.log('MORT');
+
+                  //autorise le déplacement si il n'y a pas de mur ou de rocher en bas
+                if (document.querySelector("#grille").children[x+1].children[y].classList.contains('rocher')===false){
+                    if (document.querySelector("#grille").children[x+1].children[y].classList.contains('mur')===false){
+
+                        //Déplace le joueur d'une case vers le bas et ajoute du vide là ou etait le joueur
+                        document.querySelector("#grille").children[x+1].children[y].className="joueur";
+                        document.querySelector("#grille").children[x].children[y].className="vide";
+                        tab[x+1][y]='P'
+                        tab[x][y]='V'
+                        x+=1;
+                        nbrDeplacement+=1;
+                    }
                 }
-            }
-                break;
-                    
+                    break;
+              
            
             case 'd' :
-                if (document.querySelector("#grille").children[x].children[y+1].classList.contains('rocher')===false){
-                    if (document.querySelector("#grille").children[x].children[y+1].classList.contains('mur')===false){
-                document.querySelector("#grille").children[x].children[y+1].className="player";
+            case "ArrowRight":    
+                   //autorise le déplacement si il n'y a pas de mur ou de rocher à droite
+                if (document.querySelector("#grille").children[x].children[y+1].classList.contains("rocher")===false){
+                    if (document.querySelector("#grille").children[x].children[y+1].classList.contains("mur")===false){
+                document.querySelector("#grille").children[x].children[y+1].className="joueur";
                 document.querySelector("#grille").children[x].children[y].className="vide";
+                //actualisation du tableau
+                tab[x][y+1]='P'
+                tab[x][y]='V'
                 y+=1;
                 nbrDeplacement+=1;
                     }
                 }
-                else if (document.querySelector("#grille").children[x].children[y+1].classList.contains('rocher')===true){
-                    if(document.querySelector("#grille").children[x].children[y+2].classList.contains('vide')===true){
+                //verification pour pousser un rocher
+                else if (document.querySelector("#grille").children[x].children[y+1].classList.contains("rocher")===true){
+                    if(document.querySelector("#grille").children[x].children[y+2].classList.contains("vide")===true){
+                        //actualisation de la grille et du tableau
                         document.querySelector("#grille").children[x].children[y+2].className="rocher";
-                        document.querySelector("#grille").children[x].children[y+1].className="player";
+                        tab[x][y+2]='R'
+                        document.querySelector("#grille").children[x].children[y+1].className="joueur";
+                        tab[x][y+1]='P'
                         document.querySelector("#grille").children[x].children[y].className="vide";
+                        tab[x][y]='V'
                         y+=1;
                         nbrDeplacement+=1;
 
