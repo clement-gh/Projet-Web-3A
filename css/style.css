@@ -5,7 +5,10 @@
  
     min-height: 800px;
     background-color: rgba(22, 19, 19, 0.89);
-    text-align: center;
+    display: flex;
+   justify-content: center;
+  
+
    
    
 }
@@ -14,28 +17,27 @@ img{
   margin: 0 auto;
 }
 #menu button {
+  font-family: 'Times New Roman', Times, serif;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   
   background-color: rgb(137, 71, 223);  
-  width: 40%;
+  width: 80%;
   height: 50px;
   margin: 50px;
-  font-size: 26px;
+  font-size: 24px;
   border: solid rgb(255, 255, 255);
   padding: 0;
   border-radius: 8px ;
   box-sizing: border-box;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  text-align: end;
 }
 
 #game button{
 
+    font-family: 'Times New Roman', Times, serif;
   background-color: rgb(137, 71, 223);  
-  width: 11%;
+  width: 18%;
   height: 25px;
   margin: 25px;
   font-size: 12px;
