@@ -6,8 +6,10 @@ let nbrDiamant =0;
 let tab = [];
 let niveau =0;
 let saved=0;
+let mort = false;
+let collectionDeDiamant=0;
 
-let nom = "./niveau.txt";
+let nom = "./niveau1.txt";
 /** 
 document.addEventListener("DOMContentLoaded", () => {
   niv();
@@ -28,12 +30,13 @@ switch(niveau){
 
 
 }
+mort = false;
 loadFichier(nom)
 }
 
 function loadFichier(nom) {
   
-    
+    tab=[]
     fetch(nom).then((res) => res.text()).then((text) => {
       fichier = text;
       

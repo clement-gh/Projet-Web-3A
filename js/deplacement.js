@@ -1,6 +1,5 @@
 
-let mort = false;
-let collectionDeDiamant=0;
+
 
 document.addEventListener("keydown", function(event){
     if(mort == false){
@@ -171,28 +170,26 @@ document.addEventListener("keydown", function(event){
             
         collectionDeDiamant=nbrDiamant-cpt;
         if (nbrDiamant===collectionDeDiamant){
-            niveau +=1;
-            if(niveau!=4){
-
+            ++niveau ;
+            
+            tab=[];
+        
             //passage au niveau suivant
             //afficher un msg de victoire
-            setTimeout(function(){
-                niv();  
-                tab=[];
-            },50);
-        }else {}//afficher victoire des 3lvl
-     
+            niv();
+       
          }
 
        
         x=getX(); y=getY();
     }
     
-    else{
-            setTimeout(function(){
-                loadFichier(nom);  
-            },500);
-        }
+   if(mort==true){
+    setTimeout(function(){
+        niv();
+    },500);
+       
+    }
 
         console.log(x)
         console.log(y)
