@@ -9,6 +9,8 @@ let saved=0;
 let mort = false;
 let collectionDeDiamant=0;
 let inputText = document.getElementById("inputtext");
+let inputText2 = document.getElementById("inputtext2");
+let inputText3 = document.getElementById("inputtext3");
 let nom = "./niveau1.txt";
 
 
@@ -32,7 +34,11 @@ loadFichier(nom)
 tab=[]
 nbrDeplacement =0;
 inputText.innerHTML =0;
+inputText2.innerHTML =0;
+//pb pour le nb de deplacement
+inputText3.innerHTML =4;
 nbrDiamant =0;
+
 }
 
 function loadFichier(nom) {

@@ -136,7 +136,7 @@ document.addEventListener("keydown", function(event){
             default:
                 break;
         }
-
+        
         
         //gravité auto
         //parcours de la grille
@@ -170,6 +170,8 @@ document.addEventListener("keydown", function(event){
             
         collectionDeDiamant=nbrDiamant-cpt;
         inputText.innerHTML = collectionDeDiamant;
+        inputText2.innerHTML = nbrDiamant;
+
         if (nbrDiamant===collectionDeDiamant){
             ++niveau ;
             collectionDeDiamant=0;
