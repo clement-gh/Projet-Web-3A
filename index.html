@@ -27,7 +27,7 @@
     
     <div id="load" hidden> 
       <img src="img/boulder-dash.png" />
-      <input type="file"  id="file" />
+      <input type="file"  id="file"  onchange="loadFile(this.files[0])" />
 
       <button id="play">jouer sur le niveau selectionné</button>
      
@@ -54,8 +54,8 @@
       <div>
         <script src="./js/initialisation.js"></script>
         <script src="./js/jeux.js"></script>
+        <script src="./js/loadlevel.js"></script>
         <script src="./js/map.js"></script>
-        
         <script src="./js/deplacement.js"></script>
       </div>    
       

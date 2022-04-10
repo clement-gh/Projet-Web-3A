@@ -1,7 +1,7 @@
 
 
 document.getElementById("nouvellepartie").addEventListener("click", function() {
-  niveau =0;//nouvelle partie fait recommancer au  niveau 1
+  niveau =1;//nouvelle partie fait recommancer au  niveau 1
   rest();
           niv();
           deletesave();
@@ -31,7 +31,8 @@ document.getElementById("accueil").addEventListener("click", function() {
 document.getElementById("recommencer") .addEventListener("click", function() {
   if (confirm("Voulez-vous vraiment recommencer la partie ?")) {
     rest();
-loadFichier(nom);
+    loadmap();
+//loadFichier(nom);
   }
 }, false);
 
@@ -56,7 +57,10 @@ document.getElementById("retour")
   document.getElementById("menu").hidden = false; //menu visible
   document.getElementById("game").hidden = true; //je caché
   document.getElementById("load").hidden = true; //chargement caché
+
+
 }, false);
+
 
 
 
@@ -68,14 +72,14 @@ document.getElementById("chargerniveau").addEventListener("click", function() {
 
         }, false);
 
+
+
 document.getElementById("play").addEventListener("click", function() {
-/** 
+ 
   document.getElementById("load").hidden = true; //chargement caché
   document.getElementById("menu").hidden = true;
-  document.getElementById("game").hidden = false;   */
- loadFile();
-
+  document.getElementById("game").hidden = false;   
   
-
+  run();
 
 }, false);

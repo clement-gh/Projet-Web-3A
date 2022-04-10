@@ -3,11 +3,11 @@
 
 function niv(){
 switch(niveau){
-  case 0:
-    nom="./niveau1.txt";break;
   case 1:
-     nom="./niveau2.txt";break;
+    nom="./niveau1.txt";break;
   case 2:
+     nom="./niveau2.txt";break;
+  case 3:
     nom="./niveau3.txt";break;
 
 }
@@ -191,4 +191,3 @@ function loadSavedGame() {
 
 
 
-      

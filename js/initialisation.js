@@ -3,7 +3,7 @@ let response = "";
 let nbrDeplacement =0;
 let nbrDiamant =0;
 let tab = [];
-let niveau =0;
+let niveau =1;
 let saved=0;
 let mort = false;
 let collectionDeDiamant=0;
@@ -23,5 +23,6 @@ function rest(){
     inputText2.innerHTML =0;
     inputText3.innerHTML = 0;
     nbrDiamant =0;
+   // fichier= "";
     
     }
