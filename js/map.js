@@ -41,6 +41,8 @@ nbrDiamant =0;
 
 }
 
+
+//fonction permettant de charger un niveau à partir de son nom en .txt
 function loadFichier(nom) {
   
     tab=[]
@@ -52,10 +54,11 @@ function loadFichier(nom) {
 }
 
 
-
+// lit le fichier text et met dans un tableau les lettres lues
 function loadmap() {
   const grille = document.getElementById("grille");
   grille.innerHTML = '';
+
   for (let ligne of fichier.split(/\n/)) {
     const tab2 = [];
     for (let i = 0; i < ligne.length; i++) {
@@ -86,11 +89,12 @@ function loadmap() {
   
   printMap();
   console.log(tab)
+  //set la position du personnage
   x=getX(); y=getY();
 }
 
 
-
+//fonction permettant à partir du tableau d'afficher les items sur la page web
 function printMap() {
   const grille = document.getElementById("grille");
   grille.innerHTML = '';
@@ -128,7 +132,7 @@ function printMap() {
   
 }
 
-
+//retourne la position en x du joueur
 function getX(){
 let pos =0
   for (let x = 0; x < tab.length; ++x) {
@@ -144,6 +148,7 @@ let pos =0
 
   return pos;
 }
+//retourne la position en y du joueur
 function getY(){
   let pos=0
   for (let x = 0; x < tab.length; ++x) {
@@ -160,6 +165,8 @@ function getY(){
     return pos;
   }
 
+
+
   function getTab(){
     return tab;
   }
@@ -171,7 +178,7 @@ function getY(){
   }
 
 
-
+//stockage des information de la partie dans le local storage
   function save(){
     
    
@@ -182,52 +189,32 @@ function getY(){
     
     }
 
-    function loadSavedGame() {
+function loadSavedGame() {
      
-        let tabTemp =[];
+  let tabTemp =[];
 
-         tabTemp=window.localStorage.getItem("tableau");
-         t=0;
-         for (let x = 0; x < 16; ++x) {
-          for (let y = 0; y < 32; ++y) {
-            tab[x][y]=tabTemp[t]
-            ++t;
-          }
-        }
-       nbrDeplacement=localStorage.getItem("deplacement");
-       nbrDiamant=localStorage.getItem("diams");
+  tabTemp=window.localStorage.getItem("tableau");
+  t=0;
+  for (let x = 0; x < 16; ++x) {
+    for (let y = 0; y < 32; ++y) {
+      tab[x][y]=tabTemp[t]
+      ++t;
+          
+    }
+    
+  }
+ nbrDeplacement=localStorage.getItem("deplacement");
+ nbrDiamant=localStorage.getItem("diams");
          
       
       
   }
 
   function deletesave(){
-
     saved=0;
-  
-  
   }
 
- function loadFile() {
-  let file=  document.getElementById("file").files[0];
-    
-  let reader =new FileReader();
 
-  reader.readAsText(file);
-  let txt =[];
 
-  setTimeout( () => {txt.push(file)}, 500);
-
-  txt.push(reader)
-  console.log(file)
-  console.log(reader)
-  console.log(reader.result)
-  console.log(txt)
-      
-         
-         
-      
-    
-  }
 
       

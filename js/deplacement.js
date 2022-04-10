@@ -170,7 +170,6 @@ document.addEventListener("keydown", function(event){
             
         collectionDeDiamant=nbrDiamant-cpt;
         inputText.innerHTML = collectionDeDiamant;
-        inputText2.innerHTML = nbrDiamant;
 
         if (nbrDiamant===collectionDeDiamant){
             ++niveau ;
@@ -178,7 +177,7 @@ document.addEventListener("keydown", function(event){
             tab=[];
             cpt=0;
             //passage au niveau suivant
-            //afficher un msg de victoire
+          
             niv();
        
          }
@@ -188,7 +187,7 @@ document.addEventListener("keydown", function(event){
     }
     
 console.log(niveau)
-
+//recharge le niveau automatiquement après la mort
    if(mort==true){
     setTimeout(function(){
         niv();
