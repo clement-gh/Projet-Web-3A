@@ -2,10 +2,10 @@
 
 document.getElementById("nouvellepartie").addEventListener("click", function() {
   niveau =0;//nouvelle partie fait recommancer au  niveau 1
-  
+  rest();
           niv();
           deletesave();
-          tab=[];
+          
           document.getElementById("load").hidden = true; //chargement caché
   document.getElementById("menu").hidden = true;
   document.getElementById("game").hidden = false;
@@ -30,7 +30,7 @@ document.getElementById("accueil").addEventListener("click", function() {
 
 document.getElementById("recommencer") .addEventListener("click", function() {
   if (confirm("Voulez-vous vraiment recommencer la partie ?")) {
-    tab=[];
+    rest();
 loadFichier(nom);
   }
 }, false);

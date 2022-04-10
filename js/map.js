@@ -1,17 +1,4 @@
 
-let fichier= "";
-let response = "";
-let nbrDeplacement =0;
-let nbrDiamant =0;
-let tab = [];
-let niveau =0;
-let saved=0;
-let mort = false;
-let collectionDeDiamant=0;
-let inputText = document.getElementById("inputtext");//collection de diams
-let inputText2 = document.getElementById("inputtext2");//nbre total de diamant sur le niveau
-let inputText3 = document.getElementById("inputtext3");//nbre de déplacements
-let nom = "./niveau1.txt";
 
 
 function niv(){
@@ -23,22 +10,9 @@ switch(niveau){
   case 2:
     nom="./niveau3.txt";break;
 
-
-
-
-
 }
-collectionDeDiamant=0;
-mort = false;
 loadFichier(nom)
-tab=[]
-nbrDeplacement =0;
-inputText.innerHTML =0;
-inputText2.innerHTML =0;
-//pb pour le nb de deplacement
-inputText3.innerHTML = 0;
-nbrDiamant =0;
-
+rest();
 }
 
 
@@ -215,10 +189,6 @@ function loadSavedGame() {
   }
 
 
-function rest(){
-tab=[];
 
-
-}
 
       

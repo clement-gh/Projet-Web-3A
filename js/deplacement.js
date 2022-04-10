@@ -170,7 +170,7 @@ document.addEventListener("keydown", function(event){
             
         collectionDeDiamant=nbrDiamant-cpt;
         inputText.innerHTML = collectionDeDiamant;//actualisation du nombre de diamants sur l'ecran
-
+        inputText3.innerHTML = nbrDeplacement;
         if (nbrDiamant===collectionDeDiamant){
             ++niveau ;
             collectionDeDiamant=0;
