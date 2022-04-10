@@ -8,39 +8,28 @@
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div id="menu">
         <img src="img/boulder-dash.png" />
         <button id="nouvellepartie">Nouvelle partie</button>
         <button id="reprendrepartie">Reprendre la partie </button>
         <button id="chargerniveau">Charger un niveau</button>
-
-
-
-
     </div>
       
 
-        
-    
-
-    
     <div id="load" hidden> 
       <img src="img/boulder-dash.png" />
       <input type="file"  id="file"  onchange="loadFile(this.files[0])" />
-
       <button id="play">jouer sur le niveau selectionné</button>
-     
       <button id="retour">retour</button>
     </div>
 
-   
-
-
       
       <div id="game" hidden>
-        <p>Nombre de Diamants collectés:</p>   
+        <p>Nombre de Diamants collectés:  
         <div id="inputtext"></div>
+        </p>
         <p>Nombre de Diamants Total:</p>   
         <div id="inputtext2"></div>
         <p>Nombre de Déplacements:</p>   
