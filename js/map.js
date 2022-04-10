@@ -4,11 +4,11 @@
 function niv(){
 switch(niveau){
   case 1:
-    nom="./niveau1.txt";break;
+    nom="./niveaux/niveau1.txt";break;
   case 2:
-     nom="./niveau2.txt";break;
+     nom="./niveaux/niveau2.txt";break;
   case 3:
-    nom="./niveau3.txt";break;
+    nom="./niveaux/niveau3.txt";break;
 
 }
 loadFichier(nom)

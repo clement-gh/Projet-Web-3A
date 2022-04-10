@@ -10,7 +10,7 @@ let collectionDeDiamant=0;
 let inputText = document.getElementById("inputtext");//collection de diams
 let inputText2 = document.getElementById("inputtext2");//nbre total de diamant sur le niveau
 let inputText3 = document.getElementById("inputtext3");//nbre de déplacements
-let nom = "./niveau1.txt";
+let nom = "./niveaux/niveau1.txt";
 
 
 function rest(){
