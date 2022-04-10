@@ -19,7 +19,7 @@ function getTab(){
     saved=1;
     
     }
-
+//permet de recuperer le comptenu du local storage
 function loadSavedGame() {
      
   let tabTemp =[];
@@ -42,7 +42,8 @@ function loadSavedGame() {
   }
 
   function deletesave(){
-    saved=0;
+    saved=0; //variable permettant de gerer si on a fait ou non une sauvegarde
+  
   }
 
 

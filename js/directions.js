@@ -8,7 +8,7 @@ function up(){
             document.querySelector("#grille").children[x].children[y].className="vide";
              //actualisation du tableau 
              tab[x-1][y]='P'
-             tab[x][y]='V'
+             tab[x][y]='V' //place du vide là ou etait le joueur  dans le tableau (idem pour les autres directions)
              x-=1;
              nbrDeplacement+=1;
         }
@@ -29,11 +29,7 @@ function down(){
                 
                document.querySelector("#grille").children[x].children[y].className="rocher";
                document.querySelector("#grille").children[x-1].children[y].className="vide";
-                //document.querySelector("#grille").children[x-2].children[y].className="vide";
-
                 
-                
-                //fonction mort
                 mort=true;
             }
         }

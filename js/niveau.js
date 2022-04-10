@@ -1,11 +1,9 @@
-
-
-
-document.addEventListener("keydown", function(event){
+document.addEventListener("keydown", function(event){ //permet de detecter quand une touche est enfoncée
     if(mort == false){
-      console.log(tab)
+      
         switch (event.key)
-        {
+        { //appel des fonctions de déplacement presentes dans directions.js 
+            //en fontion de la touche pressée
             case 'z' :
             case "ArrowUp":
             
@@ -35,13 +33,13 @@ document.addEventListener("keydown", function(event){
             break;
         }
         
-        
-        //gravité auto
+      
         //parcours de la grille
         cpt=0;
         for ( x = 0; x < 32; ++x) {
             for ( y = 0; y < 16; ++y) {
 
+                //gravité auto
                 //verification si un rocher est au dessu du vide
                 if(document.querySelector("#grille").children[y].children[x].classList.contains("rocher")===true){
                     if(document.querySelector("#grille").children[y+1].children[x].classList.contains("vide")===true) {
@@ -51,20 +49,20 @@ document.addEventListener("keydown", function(event){
                         document.querySelector("#grille").children[y+1].children[x].className="rocher";
                         document.querySelector("#grille").children[y].children[x].className="vide";
                         //actualisation tu tableau
-
-                       
                     }
                 }
-                
+                //comptage du nombre de diamants encore présents sur le niveau
                 if(document.querySelector("#grille").children[y].children[x].classList.contains("diamant")===true){
-                    cpt+=1;
+                    cpt+=1; 
                 }   
             }      
         }
             
-        collectionDeDiamant=nbrDiamant-cpt;
+        collectionDeDiamant=nbrDiamant-cpt; //calcule à chaque déplacement le nombre de daimants collectés par le joueur
         inputText.innerHTML = collectionDeDiamant;//actualisation du nombre de diamants sur l'ecran
-        inputText3.innerHTML = nbrDeplacement;
+        inputText3.innerHTML = nbrDeplacement; //acctualise le nbr de déplacements du joueur sur l'ecran
+
+        //verification si la partie est gagnée
         if (nbrDiamant===collectionDeDiamant){
             ++niveau ;
             collectionDeDiamant=0;
@@ -75,19 +73,19 @@ document.addEventListener("keydown", function(event){
             niv();
        
          }
-        x=getX(); y=getY(); //recentrage des coordonnées sur le personnage
+
+
+     x=getX(); y=getY(); //recentrage des coordonnées sur le personnage
     }
     
-console.log(niveau)
+
 //recharge le niveau automatiquement après la mort
    if(mort==true){
-    setTimeout(function(){
+    setTimeout(function(){ //petmet d'attendre pour avant le rechargement du niveau
         rest();
        loadmap();
     },500);
        
     }
-
-       
 
 });
