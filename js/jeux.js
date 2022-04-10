@@ -1,6 +1,8 @@
 
 
 document.getElementById("nouvellepartie").addEventListener("click", function() {
+  niveau =0;//nouvelle partie fait recommancer au  niveau 1
+  
           niv();
           deletesave();
           tab=[];
