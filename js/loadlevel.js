@@ -9,7 +9,7 @@ async function loadFile(file) {
   }
  
   function run(){
-    tab=[]
+    rest();
   fichier=text ;
   loadmap();
   }

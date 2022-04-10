@@ -82,7 +82,8 @@ console.log(niveau)
 //recharge le niveau automatiquement après la mort
    if(mort==true){
     setTimeout(function(){
-        niv();
+        rest();
+       loadmap();
     },500);
        
     }
